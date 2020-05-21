@@ -1,0 +1,60 @@
+import React from 'react';
+
+class FilterByBrand extends React.Component {
+    state = {
+        items: [],
+        error: null,
+        filterByBrand: '00000000-0000-0000-0000-000000000000'
+    }
+
+    componentDidMount() {
+        fetch("https://localhost:44376/api/customer/brand/getBrands")
+            .then(res => res.json())
+            .then(
+                (res) => {
+                    this.setState({
+                        isLoaded: true,
+                        items: res
+                    });
+                },
+                (err) => {
+                    this.setState({
+                        isLoaded: true,
+                        error: err
+                    });
+                }
+            )
+    }
+
+    filterByBrand = (evt) => {
+        this.props.filterByBrand(evt.target.id);
+
+        this.setState({
+            filterByBrand: evt.target.id
+        })
+    }
+
+    renderItem = () => {
+        let items = this.state.items.map((item, idx) => 
+            // eslint-disable-next-line jsx-a11y/anchor-has-content
+            <li key={ idx }><a id={item.brandId} href=" #" onClick={this.filterByBrand}>{ item.name }</a></li>
+        );
+
+        return items;
+    }
+
+    render() {
+        return (
+            // {/* <!-- aside widget --> */}
+            <div className="aside">
+                <h3 className="aside-title">Thương hiệu</h3>
+                <ul className="list-links">
+                    { this.renderItem() }
+                </ul>
+            </div>
+            // {/* <!-- /aside widget --> */}
+        );
+    }
+}
+
+export default FilterByBrand;

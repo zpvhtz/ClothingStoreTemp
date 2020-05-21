@@ -1,0 +1,59 @@
+.form-chuthich{
+    margin-bottom: 50px;
+    width:100%;
+    margin-top: 15px;
+
+}
+.form-padding{
+    padding:15px 10%;
+}
+.tong-tienhang{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #666666;
+    margin-top: 15px;
+}
+.txt-dathang{
+    width: 12%;
+}
+p{
+    margin: 0;
+    letter-spacing: 1px;
+    font-size:0.9em;
+}
+.gia-dathang{
+    font-size: 17px;
+    width: 15%;
+    text-align: right;
+}
+.gia-tong{
+    font-weight:700;
+    color:#F8694A
+}
+.primary-btn{
+    color: #fff;
+    background: #F8694A;
+    display: inline;
+    padding: 10px 15px;
+    font-weight: 700;
+    
+}
+.dc{
+    margin: 0;
+    font-size: 18px;
+}
+.content-address b{
+    padding-right: 30px;
+}
+.content-address h4{
+    float: left;
+    padding-right: 5-px;
+}
+.section-dc{
+    color:#F8694A
+}
+b, strong{
+    font-weight: bold;
+}
